@@ -22,5 +22,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: |
+        cd projeto-de-testes
         npm install
         ./node_modules/.bin/cypress run --spec 'cypress/e2e/**/'
