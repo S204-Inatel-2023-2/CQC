@@ -1,0 +1,14 @@
+{
+  "name": "projeto-cqc",
+  "version": "1.0.0",
+  "description": "Esse projeto tem o objetivo de automatizar os cenários de testes do cliente e futuras features.",
+  "main": "index.js",
+  "scripts": {
+    "test:chrome": "cypress run --browser chrome --no-exit",
+    "test:cenario": "cypress-tags run -e TAGS=@TEST"
+  },
+  "devDependencies": {
+    "cypress": "^13.0.0",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  }
+}
