@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test:chrome": "cypress run --browser chrome --no-exit",
-    "test:cenario": "cypress-tags run -e TAGS=@TEST"
+    "test:cenario": "cypress-tags run -e TAGS=@TELA-DE-CADASTRO"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "step_definitions": "cypress/e2e/step_definitions"
   },
   "devDependencies": {
     "cypress": "^13.0.0",
