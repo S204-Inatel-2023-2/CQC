@@ -1,0 +1,316 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Tela de Cadastro",
+    "line": 1,
+    "id": "tela-de-cadastro",
+    "tags": [],
+    "uri": "cadastro.feature",
+    "elements": [
+      {
+        "id": "tela-de-cadastro;validando-o-login-na-página-de-cadastro-do-eventnow",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Validando o login na página de Cadastro do EventNow",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "I'm on the Cadastro page",
+            "result": {
+              "status": "undefined",
+              "duration": 83000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "I'll be there on the \"Card\", I need to find the message \"Criar uma conta no EventNow\"",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "tela-de-cadastro;validando-o-aviso-de-campo-nome-está-vazio",
+        "keyword": "Scenario",
+        "line": 8,
+        "name": "Validando o aviso de campo Nome está vazio",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "I'm on the Cadastro page",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I click the \"Botão\" with the \"Cadastrar\" message",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "I need to find the \"Toast\" field with the message \"Nome está vazio =(\"",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "tela-de-cadastro;validando-o-aviso-de-campo-sobrenome-está-vazio",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "Validando o aviso de campo Sobrenome está vazio",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "I'm on the Cadastro page",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "I put the \"Joyce\" in the \"Digite seu nome\" field",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I click the \"Botão\" with the \"Cadastrar\" message",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "I need to find the \"Toast\" field with the message \"Sobrenome está vazio =(\"",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "tela-de-cadastro;validando-o-aviso-de-campo-e-mail-está-vazio",
+        "keyword": "Scenario",
+        "line": 17,
+        "name": "Validando o aviso de campo E-mail está vazio",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "I'm on the Cadastro page",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 18,
+            "name": "I put the \"Joyce\" in the \"Digite seu nome\" field",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "I put the \"Dias\" in the \"Digite seu sobrenome\" field",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "I click the \"Botão\" with the \"Cadastrar\" message",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "I need to find the \"Toast\" field with the message \"E-mail está vazio =(\"",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "tela-de-cadastro;validando-o-aviso-de-campo-senha-está-vazio",
+        "keyword": "Scenario",
+        "line": 23,
+        "name": "Validando o aviso de campo Senha está vazio",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "I'm on the Cadastro page",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 24,
+            "name": "I put the \"Joyce\" in the \"Digite seu nome\" field",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 25,
+            "name": "I put the \"Dias\" in the \"Digite seu sobrenome\" field",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 26,
+            "name": "I put the \"joyce@gmail.com.br\" in the \"Digite seu e-mail\" field",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 27,
+            "name": "I click the \"Botão\" with the \"Cadastrar\" message",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 28,
+            "name": "I need to find the \"Toast\" field with the message \"Senha está vazia =(\"",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "tela-de-cadastro;validando-o-aviso-de-campo-senha-(confirmação)-está-vazio",
+        "keyword": "Scenario",
+        "line": 30,
+        "name": "Validando o aviso de campo Senha (Confirmação) está vazio",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "I'm on the Cadastro page",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 31,
+            "name": "I put the \"Joyce\" in the \"Digite seu nome\" field",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 32,
+            "name": "I put the \"Dias\" in the \"Digite seu sobrenome\" field",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 33,
+            "name": "I put the \"joyce@gmail.com.br\" in the \"Digite seu e-mail\" field",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 34,
+            "name": "I put the \"1234567\" in the \"Digite sua senha\" field",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 35,
+            "name": "I click the \"Botão\" with the \"Cadastrar\" message",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 36,
+            "name": "I need to find the \"Toast\" field with the message \"Senha (confirmação) está vazia =(\"",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

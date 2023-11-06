@@ -1,0 +1,29 @@
+{
+  "name": "projeto-cqc",
+  "version": "1.0.0",
+  "description": "Esse projeto tem o objetivo de automatizar os cenários de testes do cliente e futuras features.",
+  "main": "index.js",
+  "scripts": {
+    "test:chrome": "cypress run --browser chrome --no-exit",
+    "test:cenario": "cypress-tags run -e TAGS=@TELA-DE-CADASTRO",
+    "cypress:execution": "cypress run --spec cypress/e2e/features/*"
+  },
+  "devDependencies": {
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "cypress": "^13.4.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "esbuild": "^0.19.5"
+  },
+  "cypress-cucumber-preprocessor": {
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    },
+    "nonGlobalStepDefinitions": true
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^19.0.1"
+  }
+}
