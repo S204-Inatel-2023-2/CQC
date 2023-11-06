@@ -14,6 +14,15 @@
     "cypress-cucumber-preprocessor": "^4.3.1",
     "esbuild": "^0.19.5"
   },
+  "cypress-cucumber-preprocessor": {
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    },
+    "nonGlobalStepDefinitions": true
+  },
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^19.0.1"
   }
