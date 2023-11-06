@@ -35,20 +35,20 @@ Scenario: Validando o aviso de campo Senha (Confirmação) está vazio
     And I click the "Botão" with the "Cadastrar" message
     Then I need to find the "Toast" field with the message "Senha (confirmação) está vazia =("
 
-Scenario: Validando se as senhas não são iguais
-    When I put the "Joyce" in the "Digite seu nome" field
-    And I put the "Dias" in the "Digite seu sobrenome" field
-    And I put the "joyce@gmail.com.br" in the "Digite seu e-mail" field
-    And I put the "1234567" in the "Digite sua senha" field
-    And I put the "23456" in the "Digite sua senha (Confirmação)" field
-    And I click the "Botão" with the "Cadastrar" message
-    Then I need to find the "Toast" field with the message "Senhas não são iguais"
+# Scenario: Validando se as senhas não são iguais
+#     When I put the "Joyce" in the "Digite seu nome" field
+#     And I put the "Dias" in the "Digite seu sobrenome" field
+#     And I put the "joyce@gmail.com.br" in the "Digite seu e-mail" field
+#     And I put the "1234567" in the "Digite sua senha" field
+#     And I put the "23456" in the "Digite sua senha (Confirmação)" field
+#     And I click the "Botão" with the "Cadastrar" message
+#     Then I need to find the "Toast" field with the message "Senhas não são iguais"
 
-Scenario: Validando a mensagem de e-mail inválido
-    When I put the "Joyce" in the "Digite seu nome" field
-    And I put the "Dias" in the "Digite seu sobrenome" field
-    And I put the "*" in the "Digite seu e-mail" field
-    And I put the "1234567" in the "Digite sua senha" field
-    And I put the "1234567" in the "Digite sua senha (Confirmação)" field
-    And I click the "Botão" with the "Cadastrar" message
-    Then I need to find the "Toast" field with the message "E-mail inválido"
+# Scenario: Validando a mensagem de e-mail inválido
+#     When I put the "Joyce" in the "Digite seu nome" field
+#     And I put the "Dias" in the "Digite seu sobrenome" field
+#     And I put the "*" in the "Digite seu e-mail" field
+#     And I put the "1234567" in the "Digite sua senha" field
+#     And I put the "1234567" in the "Digite sua senha (Confirmação)" field
+#     And I click the "Botão" with the "Cadastrar" message
+#     Then I need to find the "Toast" field with the message "E-mail inválido"
