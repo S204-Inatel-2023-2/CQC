@@ -13,6 +13,7 @@ async function setupNodeEvents(on, config) {
       plugins: [createEsbuildPlugin.default(config)],
     })
   );
+  return config;
 }
 
 module.exports = defineConfig({
