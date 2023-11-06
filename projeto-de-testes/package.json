@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test:chrome": "cypress run --browser chrome --no-exit",
-    "test:cenario": "cypress-tags run -e TAGS=@TELA-DE-CADASTRO"
+    "test:cenario": "cypress-tags run -e TAGS=@TELA-DE-CADASTRO",
+    "cypress:execution": "cypress run --spec cypress/e2e/features/*"
   },
   "devDependencies": {
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
