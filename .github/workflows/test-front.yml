@@ -24,4 +24,4 @@ jobs:
     - run: |
         cd projeto-de-testes
         npm install
-        npm run cypress run --spec cypress/e2e/features/*
+        npx cypress open
