@@ -25,16 +25,3 @@ jobs:
         cd projeto-de-testes
         npm install
         ./node_modules/.bin/cypress run --spec 'cypress/e2e/**/'
-    - name: Install Allure Command Line
-      run: |
-        sudo apt-add-repository ppa:qameta/allure
-        sudo apt-get update
-        sudo apt-get install allure
-    - name: Generate Allure Report
-      run: |
-        allure generate ./cypress/reports/allure-results --clean -o ./cypress/reports/allure-report
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GH_TOKEN }}
-        publish_dir: ./cypress/reports/allure-report
