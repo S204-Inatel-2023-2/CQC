@@ -24,8 +24,10 @@ jobs:
       with:
         name: cypress-cucumber-report
         path: projeto-de-testes/cypress/reports
-#    - name: Deploy to GitHub Pages
-#      uses: peaceiris/actions-gh-pages@v3
-#      with:
-#        github_token: ${{ secrets.GH_TOKEN }}
-#        publish_dir: ./cypress/reports
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GH_TOKEN }}
+        publish_branch: gh_pages
+        publish_dir: ./cypress/reports
