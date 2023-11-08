@@ -21,8 +21,8 @@
             "line": 3,
             "name": "I'm on the Cadastro page",
             "result": {
-              "status": "undefined",
-              "duration": 83000000
+              "status": "passed",
+              "duration": 1398000000
             }
           },
           {
@@ -31,7 +31,8 @@
             "line": 6,
             "name": "I'll be there on the \"Card\", I need to find the message \"Criar uma conta no EventNow\"",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 298000000
             }
           }
         ]
@@ -50,7 +51,8 @@
             "line": 3,
             "name": "I'm on the Cadastro page",
             "result": {
-              "status": "undefined"
+              "status": "passed",
+              "duration": 417000000
             }
           },
           {
@@ -59,7 +61,8 @@
             "line": 9,
             "name": "I click the \"Botão\" with the \"Cadastrar\" message",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 197000000
             }
           },
           {
@@ -68,7 +71,8 @@
             "line": 10,
             "name": "I need to find the \"Toast\" field with the message \"Nome está vazio =(\"",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 32000000
             }
           }
         ]
@@ -87,7 +91,8 @@
             "line": 3,
             "name": "I'm on the Cadastro page",
             "result": {
-              "status": "undefined"
+              "status": "passed",
+              "duration": 243000000
             }
           },
           {
@@ -96,7 +101,8 @@
             "line": 13,
             "name": "I put the \"Joyce\" in the \"Digite seu nome\" field",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 312000000
             }
           },
           {
@@ -105,7 +111,8 @@
             "line": 14,
             "name": "I click the \"Botão\" with the \"Cadastrar\" message",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 147000000
             }
           },
           {
@@ -114,7 +121,8 @@
             "line": 15,
             "name": "I need to find the \"Toast\" field with the message \"Sobrenome está vazio =(\"",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 25000000
             }
           }
         ]
@@ -133,7 +141,8 @@
             "line": 3,
             "name": "I'm on the Cadastro page",
             "result": {
-              "status": "undefined"
+              "status": "passed",
+              "duration": 275000000
             }
           },
           {
@@ -142,7 +151,8 @@
             "line": 18,
             "name": "I put the \"Joyce\" in the \"Digite seu nome\" field",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 367000000
             }
           },
           {
@@ -151,7 +161,8 @@
             "line": 19,
             "name": "I put the \"Dias\" in the \"Digite seu sobrenome\" field",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 255000000
             }
           },
           {
@@ -160,7 +171,8 @@
             "line": 20,
             "name": "I click the \"Botão\" with the \"Cadastrar\" message",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 199000000
             }
           },
           {
@@ -169,7 +181,8 @@
             "line": 21,
             "name": "I need to find the \"Toast\" field with the message \"E-mail está vazio =(\"",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 65000000
             }
           }
         ]
@@ -188,7 +201,8 @@
             "line": 3,
             "name": "I'm on the Cadastro page",
             "result": {
-              "status": "undefined"
+              "status": "passed",
+              "duration": 400000000
             }
           },
           {
@@ -197,7 +211,8 @@
             "line": 24,
             "name": "I put the \"Joyce\" in the \"Digite seu nome\" field",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 280000000
             }
           },
           {
@@ -206,7 +221,8 @@
             "line": 25,
             "name": "I put the \"Dias\" in the \"Digite seu sobrenome\" field",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 227000000
             }
           },
           {
@@ -215,7 +231,8 @@
             "line": 26,
             "name": "I put the \"joyce@gmail.com.br\" in the \"Digite seu e-mail\" field",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 544000000
             }
           },
           {
@@ -224,7 +241,8 @@
             "line": 27,
             "name": "I click the \"Botão\" with the \"Cadastrar\" message",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 126000000
             }
           },
           {
@@ -233,7 +251,8 @@
             "line": 28,
             "name": "I need to find the \"Toast\" field with the message \"Senha está vazia =(\"",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 48000000
             }
           }
         ]
@@ -252,7 +271,8 @@
             "line": 3,
             "name": "I'm on the Cadastro page",
             "result": {
-              "status": "undefined"
+              "status": "passed",
+              "duration": 298000000
             }
           },
           {
@@ -261,7 +281,8 @@
             "line": 31,
             "name": "I put the \"Joyce\" in the \"Digite seu nome\" field",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 277000000
             }
           },
           {
@@ -270,7 +291,8 @@
             "line": 32,
             "name": "I put the \"Dias\" in the \"Digite seu sobrenome\" field",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 238000000
             }
           },
           {
@@ -279,7 +301,8 @@
             "line": 33,
             "name": "I put the \"joyce@gmail.com.br\" in the \"Digite seu e-mail\" field",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 571000000
             }
           },
           {
@@ -288,7 +311,8 @@
             "line": 34,
             "name": "I put the \"1234567\" in the \"Digite sua senha\" field",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 323000000
             }
           },
           {
@@ -297,7 +321,8 @@
             "line": 35,
             "name": "I click the \"Botão\" with the \"Cadastrar\" message",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 159000000
             }
           },
           {
@@ -306,7 +331,8 @@
             "line": 36,
             "name": "I need to find the \"Toast\" field with the message \"Senha (confirmação) está vazia =(\"",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 52000000
             }
           }
         ]
