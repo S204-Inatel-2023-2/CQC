@@ -25,9 +25,13 @@ jobs:
         name: cypress-cucumber-report
         path: projeto-de-testes/cypress/reports
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GH_TOKEN }}
-        publish_branch: gh-pages
-        publish_dir: ./cypress/reports
+    - uses: shallwefootball/s3-upload-action@master
+      name: Upload S3
+      id: S3
+      aws_key_id: ${{ secrets.AWS_KEY_ID }}
+      aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+      aws_bucket: learn-cypress-cucumber-reports
+      source_dir: 'projeto-de-testes/cypress/reports'
+
+    - name: Link to Report
+      run: echo "https://learn-cypress-cucumber-reports.s3-ap-southeast-2.amazonaws.com/${{steps.S3.outputs.object_key}}/index.html"
