@@ -16,10 +16,16 @@ jobs:
         npm install
         ./node_modules/.bin/cypress run --spec 'cypress/e2e/**/'
   
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+    - name: Generate report 
+      run: cd projeto-de-testes && npm run postcypress:run
+    
+    - name: Upload report
+      uses: actions/upload-artifact@v2
       with:
-        github_token: ${{ secrets.GH_TOKEN }}
-        publish_dir: ./cypress/reports
-
-#teste
+        name: cypress-cucumber-report
+        path: projeto-de-testes/cypress/reports
+#    - name: Deploy to GitHub Pages
+#      uses: peaceiris/actions-gh-pages@v3
+#      with:
+#        github_token: ${{ secrets.GH_TOKEN }}
+#        publish_dir: ./cypress/reports
