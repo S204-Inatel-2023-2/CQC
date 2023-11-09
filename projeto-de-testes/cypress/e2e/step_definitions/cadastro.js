@@ -2,7 +2,7 @@ import {Given, When, And, Then} from "cypress-cucumber-preprocessor/steps"
 import PageObjetcs from "../../support/pageobjects/common";
 const Common = new PageObjetcs;
 
-Given("I'm on the Cadastro page",() => {
+Given(/I'm on the Cadastro page/,() => {
     Common.visit();
 })
 When(/I'll be there on the "(.+)", I need to find the message "(.+)"/,(id,legend) => {
