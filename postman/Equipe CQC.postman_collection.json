@@ -1,0 +1,1003 @@
+{
+	"info": {
+		"_postman_id": "bd7af768-1727-48c9-8630-75a0bc888b8b",
+		"name": "Equipe CQC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27394356"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "login - campos invalidos",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var schema = {\r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"mensagem\": {\r",
+									"      \"type\": \"string\"\r",
+									"    }\r",
+									"  },\r",
+									"  \"required\": [\r",
+									"    \"mensagem\"\r",
+									"  ]\r",
+									"}\r",
+									"pm.globals.set(\"schema\", schema);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"pm.test(\"Schema is valid\", function(){\r",
+									"    pm.expect(tv4.validate(pm.response.json(), pm.globals.get(\"schema\"))).to.be.true;\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n\t{\r\n\t  \"nome\": \"nome1\",\r\n\t  \"email\": \"mail1\",\r\n\t  \"senha\": \"password\"\r\n\t}\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://7x3nasz0vi.execute-api.us-east-2.amazonaws.com/dev/login",
+							"protocol": "https",
+							"host": [
+								"7x3nasz0vi",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login - sucesso",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var schema = {\r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"mensagem\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"user_id\": {\r",
+									"      \"type\": \"array\",\r",
+									"      \"items\": [\r",
+									"        {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        {\r",
+									"          \"type\": \"integer\"\r",
+									"        }\r",
+									"      ]\r",
+									"    }\r",
+									"  },\r",
+									"  \"required\": [\r",
+									"    \"mensagem\",\r",
+									"    \"user_id\"\r",
+									"  ]\r",
+									"}\r",
+									"pm.globals.set(\"schema\", schema);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Schema is valid\", function(){\r",
+									"    pm.expect(tv4.validate(pm.response.json(), pm.globals.get(\"schema\"))).to.be.true;\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"nome1\",\r\n  \"email\": \"mail1\",\r\n  \"senha\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://7x3nasz0vi.execute-api.us-east-2.amazonaws.com/dev/login",
+							"protocol": "https",
+							"host": [
+								"7x3nasz0vi",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login - bad request",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n\t{\r\n\t  \"nome\": \"nome1\",\r\n\t  \"email\": \"mail1\",\r\n\t  \"senha\": \"password\"\r\n\t}\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://7x3nasz0vi.execute-api.us-east-2.amazonaws.com/dev/loginn",
+							"protocol": "https",
+							"host": [
+								"7x3nasz0vi",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"loginn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login - erro de solicitação",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var schema ={\r",
+									"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"error\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"mensagem\": {\r",
+									"      \"type\": \"string\"\r",
+									"    }\r",
+									"  },\r",
+									"  \"required\": [\r",
+									"    \"error\",\r",
+									"    \"mensagem\"\r",
+									"  ]\r",
+									"}\r",
+									"pm.globals.set(\"schema\", schema);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 500\", function () {\r",
+									"    pm.response.to.have.status(500);\r",
+									"});\r",
+									"pm.test(\"Schema is valid\", function(){\r",
+									"    pm.expect(tv4.validate(pm.response.json(), pm.globals.get(\"schema\"))).to.be.true;\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t  \"nome\": \"\",\r\n\t  \"email\": \"\",\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://7x3nasz0vi.execute-api.us-east-2.amazonaws.com/dev/login",
+							"protocol": "https",
+							"host": [
+								"7x3nasz0vi",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cadastro de Usuário",
+			"item": [
+				{
+					"name": "Cadastro - bad request",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var schema = {\r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"error\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"mensagem\": {\r",
+									"      \"type\": \"string\"\r",
+									"    }\r",
+									"  },\r",
+									"  \"required\": [\r",
+									"    \"error\",\r",
+									"    \"mensagem\"\r",
+									"  ]\r",
+									"}\r",
+									"pm.globals.set(\"schema\", schema);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 500\", function () {\r",
+									"    pm.response.to.have.status(500);\r",
+									"});\r",
+									"pm.test(\"Schema is valid\", function(){\r",
+									"    pm.expect(tv4.validate(pm.response.json(), pm.globals.get(\"schema\"))).to.be.true;\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"nome1\",\r\n  \"email\": \"mail1\",\r\n  \"senha\": \"password\"\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://7x3nasz0vi.execute-api.us-east-2.amazonaws.com/dev/cadastro",
+							"protocol": "https",
+							"host": [
+								"7x3nasz0vi",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"cadastro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastro - sucesso",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var schema = {\r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"mensagem\": {\r",
+									"      \"type\": \"string\"\r",
+									"    }\r",
+									"  },\r",
+									"  \"required\": [\r",
+									"    \"mensagem\"\r",
+									"  ]\r",
+									"}\r",
+									"pm.globals.set(\"schema\", schema);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Schema is valid\", function(){\r",
+									"    pm.expect(tv4.validate(pm.response.json(), pm.globals.get(\"schema\"))).to.be.true;\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"nome1\",\r\n  \"email\": \"mail1\",\r\n  \"senha\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://7x3nasz0vi.execute-api.us-east-2.amazonaws.com/dev/cadastro",
+							"protocol": "https",
+							"host": [
+								"7x3nasz0vi",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"cadastro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastro - not found",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://7x3nasz0vi.execute-api.us-east-2.amazonaws.com/dev/cadastrooo",
+							"protocol": "https",
+							"host": [
+								"7x3nasz0vi",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"cadastrooo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Adicionar usuário",
+			"item": [
+				{
+					"name": "Adicionar usuário - sucesso",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var schema = {\r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"mensagem\": {\r",
+									"      \"type\": \"string\"\r",
+									"    }\r",
+									"  },\r",
+									"  \"required\": [\r",
+									"    \"mensagem\"\r",
+									"  ]\r",
+									"}\r",
+									"pm.globals.set(\"schema\", schema);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Schema is valid\", function(){\r",
+									"    pm.expect(tv4.validate(pm.response.json(), pm.globals.get(\"schema\"))).to.be.true;\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"meow\",\r\n    \"evento\": \"meow\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://7x3nasz0vi.execute-api.us-east-2.amazonaws.com/dev/add-user-event",
+							"protocol": "https",
+							"host": [
+								"7x3nasz0vi",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"add-user-event"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adicionar usuário - not found",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"meow\",\r\n    \"evento\": \"meow\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://7x3nasz0vi.execute-api.us-east-2.amazonaws.com/dev/add-user-eventt",
+							"protocol": "https",
+							"host": [
+								"7x3nasz0vi",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"add-user-eventt"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adicionar usuário - erro de processo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var schema = {\r",
+									"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"error\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"mensagem\": {\r",
+									"      \"type\": \"string\"\r",
+									"    }\r",
+									"  },\r",
+									"  \"required\": [\r",
+									"    \"error\",\r",
+									"    \"mensagem\"\r",
+									"  ]\r",
+									"}\r",
+									"pm.globals.set(\"schema\", schema);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 500\", function () {\r",
+									"    pm.response.to.have.status(500);\r",
+									"});\r",
+									"pm.test(\"Schema is valid\", function(){\r",
+									"    pm.expect(tv4.validate(pm.response.json(), pm.globals.get(\"schema\"))).to.be.true;\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://7x3nasz0vi.execute-api.us-east-2.amazonaws.com/dev/add-user-event",
+							"protocol": "https",
+							"host": [
+								"7x3nasz0vi",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"add-user-event"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Deletar usuário",
+			"item": [
+				{
+					"name": "Deletar usuário - sucesso",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://7x3nasz0vi.execute-api.us-east-2.amazonaws.com/dev/delete_usuario/string:name=dioice",
+							"protocol": "https",
+							"host": [
+								"7x3nasz0vi",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"delete_usuario",
+								"string:name=dioice"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cadastro de Evento",
+			"item": [
+				{
+					"name": "Cadastro de Evento - erro de dados",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var schema = {\r",
+									"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"error\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"mensagem\": {\r",
+									"      \"type\": \"string\"\r",
+									"    }\r",
+									"  },\r",
+									"  \"required\": [\r",
+									"    \"error\",\r",
+									"    \"mensagem\"\r",
+									"  ]\r",
+									"}\r",
+									"pm.globals.set(\"schema\", schema);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 500\", function () {\r",
+									"    pm.response.to.have.status(500);\r",
+									"});\r",
+									"pm.test(\"Schema is valid\", function(){\r",
+									"    pm.expect(tv4.validate(pm.response.json(), pm.globals.get(\"schema\"))).to.be.true;\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://7x3nasz0vi.execute-api.us-east-2.amazonaws.com/dev/cadastroevento",
+							"protocol": "https",
+							"host": [
+								"7x3nasz0vi",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"cadastroevento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastro de Evento - sucesso",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var schema = {\r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"mensagem\": {\r",
+									"      \"type\": \"string\"\r",
+									"    }\r",
+									"  },\r",
+									"  \"required\": [\r",
+									"    \"mensagem\"\r",
+									"  ]\r",
+									"}\r",
+									"pm.globals.set(\"schema\", schema);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Schema is valid\", function(){\r",
+									"    pm.expect(tv4.validate(pm.response.json(), pm.globals.get(\"schema\"))).to.be.true;\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"meow\",\r\n    \"local\": \"Inatel\",\r\n    \"administrador\": \"administrador\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://7x3nasz0vi.execute-api.us-east-2.amazonaws.com/dev/cadastroevento",
+							"protocol": "https",
+							"host": [
+								"7x3nasz0vi",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"cadastroevento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastro de Evento - bad request",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var schema = {\r",
+									"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"error\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"mensagem\": {\r",
+									"      \"type\": \"string\"\r",
+									"    }\r",
+									"  },\r",
+									"  \"required\": [\r",
+									"    \"error\",\r",
+									"    \"mensagem\"\r",
+									"  ]\r",
+									"}\r",
+									"pm.globals.set(\"schema\", schema);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 500\", function () {\r",
+									"    pm.response.to.have.status(500);\r",
+									"});\r",
+									"pm.test(\"Schema is valid\", function(){\r",
+									"    pm.expect(tv4.validate(pm.response.json(), pm.globals.get(\"schema\"))).to.be.true;\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"meow\",\r\n    \"local\": \"Inatel\",\r\n    \"administrador\": \"administrador\"\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://7x3nasz0vi.execute-api.us-east-2.amazonaws.com/dev/cadastroevento",
+							"protocol": "https",
+							"host": [
+								"7x3nasz0vi",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"cadastroevento"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "dev",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Schema is valid\", function(){\r",
+							"    pm.expect(tv4.validate(pm.response.json(), pm.globals.get(\"schema\"))).to.be.true;\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var schema = {\r",
+							"  \"type\": \"object\",\r",
+							"  \"properties\": {\r",
+							"    \"message\": {\r",
+							"      \"type\": \"string\"\r",
+							"    },\r",
+							"    \"status\": {\r",
+							"      \"type\": \"integer\"\r",
+							"    }\r",
+							"  },\r",
+							"  \"required\": [\r",
+							"    \"message\",\r",
+							"    \"status\"\r",
+							"  ]\r",
+							"}\r",
+							"pm.globals.set(\"schema\", schema);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://7x3nasz0vi.execute-api.us-east-2.amazonaws.com/dev",
+					"protocol": "https",
+					"host": [
+						"7x3nasz0vi",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
