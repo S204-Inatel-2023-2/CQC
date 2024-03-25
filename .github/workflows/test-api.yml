@@ -6,9 +6,7 @@ on:
   pull_request:
     branches: [ main ]
   workflow_dispatch:
-    inputs:
-      name:
-        description: "Escolha a branch que deseja executar a pipeline de testes do Maestro!"
+    description: "Escolha a branch que deseja executar a pipeline de testes do Maestro!"
 
 jobs:
   build:
